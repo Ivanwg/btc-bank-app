@@ -25,9 +25,7 @@
   * Для запуска используйте команду npx cypress open,
   * Дождитесь открытия окна программы,
   * Выберите тип - e2e тесты как на скрине
-      ![]https://docs.cypress.io/img/guides/getting-started/opening-the-app/launchpad.png,
-  * Выберите тип браузера - например, гугл,
-      как на скрине ![]https://docs.cypress.io/img/guides/getting-started/opening-the-app/select-browser.png,
+      https://docs.cypress.io/img/guides/getting-started/opening-the-app/launchpad.png,
+  * Выберите тип браузера - например, гугл, как на скрине 
+      https://docs.cypress.io/img/guides/getting-started/opening-the-app/select-browser.png,
   * Во вкладке Specs нажмите на файл coin.cy.js и тесты запустятся
-
-<img scr="https://docs.cypress.io/img/guides/getting-started/opening-the-app/launchpad.png">
