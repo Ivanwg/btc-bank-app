@@ -1,0 +1,13 @@
+.balance-detail {
+  &__main-content {
+    padding-top: 50px;
+  }
+  &__blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 288px 288px auto;
+    row-gap: 50px;
+  }
+  &__block {
+  }
+}

@@ -1,0 +1,21 @@
+.input-success {
+  border-color: $successColor !important;
+  background-color: $white;
+}
+
+.input-error {
+  border-color: $errorColor !important;
+  background-color: $white;
+}
+
+.rotated180 {
+  transform: rotate(180deg);
+}
+
+.pointered {
+  cursor: pointer;
+}
+
+.disabled {
+  display: none;
+}

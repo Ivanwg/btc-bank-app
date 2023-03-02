@@ -1,0 +1,127 @@
+.account-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  height: 100%;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  background-color: $white;
+  &__title {
+    @include fontProperties(18px, 'Roboto', $blueDark, 22px, 500);
+    &-l2 {
+      @include fontProperties(13px, 'WorkSans', $black, 15px, 700);
+    }
+  }
+  &__balance {
+    margin: 9px 0 0;
+    @include fontProperties(14px, 'Ubuntu', $blueDark, 20px);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 9px;
+  }
+  &__b-left {
+    margin-right: 9px;
+  }
+  &__date {
+    @include fontProperties(13px, 'WorkSans', $black, 15px, 400);
+  }
+  &__btn {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}
+
+
+.accounts {
+  &__top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__top-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__sort-wrap {
+    position: relative;
+    margin: 0 35px;
+    min-width: 300px;
+  }
+  &__sort-btn {
+    @include formInput;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 40px;
+    width: 100%;
+    border-color: $mainBlue;
+    &::after {
+      position: absolute;
+      content: '';
+      top: calc(50% - 2px);
+      right: 23px;
+      z-index: 2;
+      // display: block;
+      border: 5px solid transparent;
+      border-top: 5px solid $blueDark;
+      pointer-events: none;
+      transition-property: transform top;
+      transition-duration: .2s;
+      transition-timing-function: ease;
+    }
+    &_open {
+      &::after {
+        top: calc(50% - 7px);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__create-acc-btn {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: "+";
+      position: relative;
+      display: inline-block;
+      margin-right: 12px;
+      font-size: 20px;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__cards-wrap {
+    position: relative;
+    padding-top: 50px;
+  }
+
+  &__errs-wrap {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 2;
+    @include fontProperties(14px, 'Ubuntu', $errorColor, 125%, 500);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    column-gap: 70px;
+    row-gap: 50px;
+  }
+  .dropdown {
+    &__btn {
+      &:hover {
+        background-color: $blueLight;
+      }
+    }
+  }
+}

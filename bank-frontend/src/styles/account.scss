@@ -1,0 +1,212 @@
+.account-detal {
+  &__main-content {
+    padding-top: 50px;
+  }
+  &__blocks {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-auto-rows: auto;
+    gap: 50px;
+  }
+  &__block {
+    &_transfer {
+      width: 606px;
+    }
+    // &_balance-history {
+    //   width: ;
+    // }
+    &_transfer-history {
+      grid-column: span 2;
+    }
+  }
+}
+
+.transfer {
+  padding: 25px 50px;
+  height: 100%;
+  border-radius: 50px;
+  background-color: $blueBgc;
+  &__title {
+    @include fontProperties(20px, 'Roboto', $black, 23px, 700);
+  }
+  &__form {
+    width: 100%;
+    padding-left: 210px;
+  }
+  &__label {
+    position: relative;
+    display: block;
+    margin-top: 25px;
+  }
+  &__label-text {
+    @include labeledText;
+  }
+  &__input {
+    position: relative;
+    @include formInput;
+    padding-right: 40px;
+    width: 100%;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+    &_select {
+      z-index: 3;
+    }
+  }
+  &__errs-wrap {
+    @include errInput;
+    &_main {
+      @include errFormMain;
+      margin-top: 3px;
+      margin-bottom: 2px;
+    }
+  }
+  &__icon-wrap {
+    @include inputIconWrap;
+    right: -32px;
+  }
+  &__icon {
+    @include validateInputIcon;
+  }
+
+  .open-list-icon {
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 23px;
+    z-index: 4;
+    width: 10px;
+    height: 5px;
+    pointer-events: none;
+    transition: transform .2s ease;
+
+    &::after {
+      content: '';
+      display: block;
+      border: 5px solid transparent;
+      border-top: 5px solid $blueDark;
+    }
+
+  }
+}
+
+.balance-history {
+  padding: 25px 50px 20px;
+  height: 100%;
+  border-radius: 50px;
+  background-color: $white;
+  box-shadow: 0px 5px 20px $boxShadow;
+  &__title {
+    @include fontProperties(20px, 'Roboto', $black, 23px, 700);
+  }
+  &__content {
+    height: 100%;
+  }
+  &__chart-wrap {
+    margin-top: 13px;
+    height: 200px;
+  }
+  .canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.transfer-history {
+  padding: 25px 50px 65px;
+  height: 100%;
+  border-radius: 50px;
+  background-color: $blueBgc;
+  &__title {
+    @include fontProperties(20px, 'Roboto', $black, 23px, 700);
+  }
+  &__table-wrap {
+    margin-top: 25px;
+  }
+}
+
+
+.account-block-filler {
+  margin-top: 25px;
+  @include fontProperties(16px, 'Roboto', $mainBlue, 20px, 500);
+}
+
+.transfers-table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  &__head {
+    background-color: $mainBlue;
+  }
+  &__th {
+    padding: 20px 0;
+    &:first-child {
+      overflow: hidden;
+      border-radius: 15px 0 0 15px;
+    }
+    &:last-child {
+      overflow: hidden;
+      border-radius: 0 15px 15px 0;
+    }
+    &:nth-child(1) {
+      padding-left: 50px;
+      width: 340px;
+    }
+    &:nth-child(2) {
+      width: 340px;
+    }
+    &:nth-child(3) {
+      width: auto;
+    }
+    &:nth-child(4) {
+      padding-right: 50px;
+      width: auto;
+    }
+  }
+  &__tr {
+    &_head {
+
+    }
+  }
+  &__body {
+    padding: 0 50px;
+  }
+  &__td {
+    padding: 21px 0 25px;
+    padding-right: 40px;
+    &:nth-child(1) {
+      padding-left: 50px;
+    }
+    &:nth-child(4) {
+      padding-right: 50px;
+    }
+    border-bottom: 2px solid $blueOpacity10;
+  }
+  // .t {
+  //   &_first {
+  //     padding-left: 50px;
+  //   }
+  //   &_last {
+  //     padding-right: 50px;
+  //   }
+  // }
+  &__title {
+    @include fontProperties(20px, 'Ubuntu', $white, 120%, 500);
+  }
+  &__item {
+    @include fontProperties(16px, 'Ubuntu', $secondaryColor, 150%, 400);
+  }
+}
+
+.positive {
+  color: $successColor;
+}
+
+.negative {
+  color: $pink;
+}

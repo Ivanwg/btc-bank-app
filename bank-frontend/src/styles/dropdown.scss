@@ -1,0 +1,42 @@
+
+
+.dropdown {
+  // display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 10px 0;
+  border-radius: 7px;
+  background-color: white;
+  transform: translateY(2px);
+  overflow: hidden;
+  box-shadow: (0px 5px 20px rgba(0, 0, 0, 0.25));
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px;
+    width: 100%;
+    @include fontProperties(16px, 'Ubuntu', $black, 150%, 400);
+    transition: background-color .2s ease;
+    &:hover {
+      background-color: $blueOpacity10;
+    }
+    &_select-open {
+      position: relative;
+      &::before {
+        position: absolute;
+        right: 19px;
+        content: "";
+        display: block;
+        width: 18px;
+        height: 14px;
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00003 11.17L1.83003 7.00003L0.410034 8.41003L6.00003 14L18 2.00003L16.59 0.590027L6.00003 11.17Z' fill='%23182233'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+      }
+    }
+  }
+}

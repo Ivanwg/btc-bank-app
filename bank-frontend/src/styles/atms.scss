@@ -1,0 +1,22 @@
+.atms {
+  &__main-content {
+    padding-top: 56px;
+  }
+
+  &__map-wrap {
+    position: relative;
+    width: 100%;
+    height: 728px;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+  &__map-err {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    z-index: 2;
+    @include fontProperties(14px, 'Ubuntu', $errorColor, 125%, 500);
+  }
+}

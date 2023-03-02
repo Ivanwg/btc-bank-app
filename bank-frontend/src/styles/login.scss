@@ -1,0 +1,55 @@
+.login {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flexColAllCenter;
+  min-width: 500px;
+  &__wrap {
+    @include flexColJustifyCenter;
+    padding: 50px 85px 50px 115px;
+    border-radius: 50px;
+    background-color: $blueBgc;
+  }
+  &__title {
+    margin-bottom: 35px;
+    @include fontProperties(34px, 'WorkSans', $black, 40px, 700);
+  }
+
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    position: relative;
+    .label-text {
+      @include labeledText;
+    }
+    &:first-child {
+      margin-bottom: 25px;
+    }
+  }
+  &__input {
+    @include formInput;
+  }
+  &__btn {
+    align-self: flex-start;
+    margin-top: 5px;
+  }
+
+  &__errs-wrap {
+    @include errInput;
+    &_main {
+      @include errFormMain;
+    }
+  }
+
+  &__icon-wrap {
+    @include inputIconWrap;
+  }
+  &__icon {
+    @include validateInputIcon;
+  }
+}

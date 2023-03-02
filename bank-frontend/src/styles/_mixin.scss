@@ -1,0 +1,106 @@
+@mixin fontProperties($fsize, $ffamily, $fcolor, $lheight, $fweight:400) {
+  font-family: $ffamily;
+  font-weight: $fweight;
+  font-size: $fsize;
+
+  color: $fcolor;
+  line-height: $lheight;
+}
+
+@mixin radiusedBtn() {
+  border-radius: 7px;
+  @include fontProperties(16px, 'Ubuntu', $mainBlue, 20px, 500);
+}
+
+@mixin flexColAllCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColJustifyCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin inputTransition {
+  transition-property: border-color, background-color;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
+@mixin inputBorderBgc($borderColor, $bgcColor) {
+  border-color: $borderColor;
+  background-color: $bgcColor;
+}
+
+@mixin inputFocusedHover {
+  &:hover,
+  &:focus {
+    @include inputBorderBgc($mainBlue, $blueOpacity10);
+  }
+}
+
+@mixin formInput {
+  padding: 9px 9px 9px 15px;
+  border: 1px solid $grayBorder;
+  border-radius: 7px;
+  background-color: $white;
+  @include fontProperties(16px, 'Ubuntu', $secondaryColor, 24px, 400);
+  &::placeholder {
+    @include fontProperties(16px, 'Ubuntu', $grayPlaceholder, 24px, 400);
+  }
+}
+
+@mixin errInput {
+  position: absolute;
+  left: 15px;
+  top: -20px;
+  @include fontProperties(14px, 'Ubuntu', $errorColor, 125%, 500);
+}
+
+@mixin errFormMain {
+  position: static;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 5px;
+  padding-left: 14px;
+  min-height: 20px;
+}
+
+@mixin labeledText {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  @include fontProperties(16px, 'Ubuntu', $black, 20px, 500);
+  transform: translateX(calc(-100% - 18px));
+}
+
+@mixin inputIconWrap {
+  position: absolute;
+  top: 0;
+  right: calc(-24px - 18px);
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 100%;
+}
+
+@mixin validateInputIcon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  &_error {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_901)'%3E%3Cpath d='M12 3.94365L22.2338 21L1.76619 21L12 3.94365Z' fill='%23BA0000' stroke='%23BA0000' stroke-width='2'/%3E%3Cpath d='M12 10L12 15M12 18L12 16.5' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_901'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  }
+  &_success {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22C6.47967 21.994 2.00606 17.5204 2 12V11.8C2.10993 6.30455 6.63459 1.92797 12.1307 2.0009C17.6268 2.07382 22.0337 6.5689 21.9978 12.0654C21.9619 17.5618 17.4966 21.9989 12 22ZM7.41 11.59L6 13L10 17L18 9.00002L16.59 7.58002L10 14.17L7.41 11.59Z' fill='%2376CA66'/%3E%3C/svg%3E");
+  }
+}
